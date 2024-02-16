@@ -556,6 +556,10 @@ video {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -570,6 +574,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .rounded {
