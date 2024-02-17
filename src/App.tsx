@@ -1,20 +1,21 @@
+import { useState } from "react";
 import { Card } from "./components/Card/Card";
+import { Pulldown } from "./components/Pulldown/Pulldown";
+import locationData from "./data/location.json";
+import { CardContainer } from "./components/Card/CardContainer";
 
 export const App = () => {
+  const [location, setLocation] = useState("");
+  const handleLocationChange = (id: string) => {
+    setLocation(id);
+  };
   return (
-    <div>
+    <div className="grid gap-2">
       <h1 className="font-bold text-center">天気予報</h1>
-      <div className="flex justify-between w-1/2 m-auto mt-3">
-        <div className="w-3/10">
-          <Card />
-        </div>
-        <div className="w-3/10">
-          <Card />
-        </div>
-        <div className="w-3/10">
-          <Card />
-        </div>
+      <div className="flex justify-center">
+        <Pulldown data={locationData} onChangeLocation={handleLocationChange} />
       </div>
+      <CardContainer />
     </div>
   );
 };
