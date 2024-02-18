@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Card } from "./components/Card/Card";
 import { Pulldown } from "./components/Pulldown/Pulldown";
 import locationData from "./data/location.json";
 import { CardContainer } from "./components/Card/CardContainer";
@@ -15,7 +14,7 @@ export const App = () => {
       <div className="flex justify-center">
         <Pulldown data={locationData} onChangeLocation={handleLocationChange} />
       </div>
-      <CardContainer />
+      <CardContainer query={location} />
     </div>
   );
 };
