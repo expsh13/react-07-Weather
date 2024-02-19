@@ -1,5 +1,5 @@
 import { fetchCardData } from "../../functions/fetchCardData";
-import { fetchData } from "../../functions/fetchData";
+import { fetchData } from "../../functions/wrapPromise";
 import { Card } from "./Card";
 
 type PropsType = {

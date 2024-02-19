@@ -1,4 +1,4 @@
-import { fetchData } from "./fetchData";
+import { fetchData } from "./wrapPromise";
 
 export const fetchCardData = (query: string) => {
   const endPoint = `https://weather.tsukumijima.net/api/forecast?city=${query}`;
