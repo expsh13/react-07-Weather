@@ -1,3 +1,5 @@
+import { fetchCardData } from "../../functions/fetchCardData";
+import { fetchData } from "../../functions/fetchData";
 import { Card } from "./Card";
 
 type PropsType = {
@@ -9,6 +11,9 @@ export const CardContainer = (props: PropsType) => {
 
   if (query === "")
     return <p className="text-center">地域を選択してください</p>;
+
+  const data = fetchCardData(query).read();
+  console.log(data);
 
   return (
     <div className="flex justify-between w-1/2 m-auto">
