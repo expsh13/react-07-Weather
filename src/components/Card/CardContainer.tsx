@@ -11,10 +11,16 @@ type fetchType = {
     dateLabel: string;
     telop: string;
     temperature: {
-      min: number;
-      max: number;
+      min: {
+        celsius: null;
+        fahrenheit: null;
+      };
+      max: {
+        celsius: null;
+        fahrenheit: null;
+      };
     };
-    image: string;
+    image: { url: string };
   }[];
 };
 
@@ -25,7 +31,8 @@ export const CardContainer = (props: PropsType) => {
     return <p className="text-center">地域を選択してください</p>;
 
   const endPoint = `https://weather.tsukumijima.net/api/forecast?city=${query}`;
-  const data = cachedData<fetchType>("cardData", () =>
+
+  const data = cachedData<fetchType>(`cardData${query}`, () =>
     fetch(endPoint)
       .then((response) => response.json())
       .catch((err) => {
